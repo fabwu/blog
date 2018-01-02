@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if  [[ $TRAVIS_PULL_REQUEST = "false" ]]
+then
+    ncftp -u "$FTP_USERNAME" -p "$FTP_PASSWORD" "gusto.metanet.ch"<<EOF
+    rm -rf ./*
+    quit
+EOF
+
+    cd _site || exit
+    ncftpput -R -v -u "$FTP_USERNAME" -p "$FTP_PASSWORD" "gusto.metanet.ch" / .
+fi
+

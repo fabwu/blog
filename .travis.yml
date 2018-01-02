@@ -3,13 +3,13 @@ rvm:
 - 2.3.3
 
 before_script:
- - chmod +x ./scripts/cibuild # or do this locally and commit
+ - chmod +x ./scripts/cibuild
+ - chmod +x ./scripts/deploy
 
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
 script: ./scripts/cibuild
 
-after_success:
-    "find ./_site/ -type d -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://gusto.metanet.ch \\;"
+after_success: ./scripts/deploy
 
 sudo: false # route your build to the container-based infrastructure for a faster build
