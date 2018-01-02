@@ -10,10 +10,6 @@ before_script:
 script: ./scripts/cibuild
 
 after_success:
-    "curl --ftp-create-dirs -T _site/ -u $FTP_USER:$FTP_PASSWORD ftp://gusto.metanet.ch"
-
-env:
-  global:
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+    "curl --ftp-create-dirs -T _site/* -u $FTP_USER:$FTP_PASSWORD ftp://gusto.metanet.ch"
 
 sudo: false # route your build to the container-based infrastructure for a faster build
