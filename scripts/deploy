@@ -2,4 +2,4 @@
 
 set -e
 
-lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST -e 'mirror -c -e -R ./_site/* ~ ; exit'
+lftp -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST -e 'mirror -c -e -R _site ~ ; exit'
