@@ -10,6 +10,6 @@ before_script:
 script: ./scripts/cibuild
 
 after_success:
-    "find ./_site/ -type d -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://gusto.metanet.ch \;"
+    "find ./_site/ -type d -exec curl --ftp-create-dirs -T {} -u $FTP_USER:$FTP_PASSWORD ftp://gusto.metanet.ch \\;"
 
 sudo: false # route your build to the container-based infrastructure for a faster build
