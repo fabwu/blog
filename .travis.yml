@@ -2,6 +2,11 @@ language: ruby
 rvm:
 - 2.3.3
 
+addons:
+  apt:
+    packages:
+     - lftp
+
 before_script:
  - chmod +x ./scripts/cibuild
  - chmod +x ./scripts/deploy
