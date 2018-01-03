@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-REMOTEPATH='~'
+REMOTEPATH='/website/ch/fabwu'
 LOCALPATH='./_site/'
 
 #add as many as you want, this will prevent matching files from being removed from / overwritten / copied to the other side.
