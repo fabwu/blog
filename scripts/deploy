@@ -1,5 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e # halt script on error
 
-set -e
-
-wput ./_site/ ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST/
+lftp -e "mirror -R ./1 /" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST
