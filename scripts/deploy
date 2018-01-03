@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
+ping $FTP_HOST
+
 REMOTEPATH='/website/ch/fabwu'
 LOCALPATH='./_site/'
 
@@ -10,7 +12,5 @@ EXCLUDES=''
 
 DELETE='' #don't delete anything, just overwrite or add.
 #DELETE=' --delete' #deletes ANYTHING on the remote that isn't in the local, other than the EXCLUDES.
-
-
 
 lftp -c "set ftp:list-options -a; open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST; lcd $LOCALPATH; cd $REMOTEPATH; mirror --reverse $DELETE --use-cache --verbose --allow-chown --allow-suid --no-umask --parallel=2 $EXCLUDES"
