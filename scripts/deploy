@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-lftp -e "mirror --verbose -R ./_site /" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST
+lftp -e "mirror --verbose -R ./_site /" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST & exit
