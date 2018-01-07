@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-REMOTEPATH='~/website/ch/fabwu'
+REMOTEPATH='/website/ch/fabwu/'
 LOCALPATH='./_site/'
 
 lftp -f "
