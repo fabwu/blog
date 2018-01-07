@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-REMOTEPATH='/website/ch/fabwu/'
-LOCALPATH='./_site/'
+LOCALPATH='./_site/*'
 
 lftp -f "
 set dns:order "inet"
-open -d ftp://$FTP_HOST
+open ftp://$FTP_HOST
 user $FTP_USER $FTP_PASSWORD
-rels
-mirror --continue --reverse --delete --verbose=3 $LOCALPATH
+mirror --continue --reverse --delete $LOCALPATH
 bye
 " 
