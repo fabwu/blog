@@ -5,7 +5,7 @@ REMOTEPATH='/website/ch/fabwu/'
 LOCALPATH='./_site/'
 
 lftp -f "
-set dns:order "inet6 inet"
+set dns:order "inet"
 open -d ftp://$FTP_HOST
 user $FTP_USER $FTP_PASSWORD
 rels
