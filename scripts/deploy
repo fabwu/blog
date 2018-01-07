@@ -8,6 +8,6 @@ lftp -f "
 open $FTP_HOST
 user $FTP_USER $FTP_PASSWORD
 pwd
-mirror --continue --reverse --delete --verbose $LOCALPATH $REMOTEPATH
+mirror --continue --reverse --delete --verbose $LOCALPATH
 bye
 " 
