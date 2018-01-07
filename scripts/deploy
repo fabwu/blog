@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-REMOTEPATH='/website/ch/fabwu'
+REMOTEPATH='~/website/ch/fabwu'
 LOCALPATH='./_site/'
 
 lftp -f "
 open $FTP_HOST
 user $FTP_USER $FTP_PASSWORD
+pwd
 mirror --continue --reverse --delete --verbose $LOCALPATH $REMOTEPATH
 bye
 " 
