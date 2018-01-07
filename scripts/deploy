@@ -4,11 +4,10 @@ set -e # halt script on error
 REMOTEPATH='/website/ch/fabwu'
 LOCALPATH='./_site/'
 
-#add as many as you want, this will prevent matching files from being removed from / overwritten / copied to the other side.
-EXCLUDES=''
-#EXCLUDES='--exclude-glob .git --exclude-glob _sess/*  --exclude-glob uploads/* --exclude-glob deploy.sh'
-
-DELETE='' #don't delete anything, just overwrite or add.
-#DELETE=' --delete' #deletes ANYTHING on the remote that isn't in the local, other than the EXCLUDES.
-
-lftp -c "set ftp:list-options -a; open ftp://$FTP_USERNAME:$FTP_PASSWORD@$FTP_HOST; lcd $LOCALPATH; cd $REMOTEPATH; mirror --reverse $DELETE --use-cache --verbose --allow-chown --allow-suid --no-umask --parallel=2 $EXCLUDES"
+lftp -f "
+open $FTP_HOST
+user $FTP_USER $FTP_PASSWORD
+lcd $LOCALPATH
+mirror --continue --reverse --delete --verbose $LOCALPATH $REMOTEPATH
+bye
+" 
