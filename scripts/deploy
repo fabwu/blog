@@ -4,10 +4,10 @@ set -e # halt script on error
 REMOTEPATH='/website/ch/fabwu/'
 LOCALPATH='./_site/'
 
-lftp -vvv -f "
-open ftp://$FTP_HOST
+lftp -f "
+open -d ftp://$FTP_HOST
 user $FTP_USER $FTP_PASSWORD
-ls
+rels
 mirror --continue --reverse --delete --verbose $LOCALPATH
 bye
 " 
