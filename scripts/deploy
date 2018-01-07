@@ -7,7 +7,7 @@ LOCALPATH='./_site/'
 lftp -f "
 open $FTP_HOST
 user $FTP_USER $FTP_PASSWORD
-pwd
+ls
 mirror --continue --reverse --delete --verbose $LOCALPATH
 bye
 " 
