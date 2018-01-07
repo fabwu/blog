@@ -1,15 +1,17 @@
 ---
 layout: single
 title:  "FTP deployment with Travis CI and lftp"
-date:   2018-01-17 13:47:32 +0100
+date:   2018-01-07 13:47:32 +0100
 categories: travis ftp deployment
 ---
 We're in 2018 now and it couldn't be so hard to upload my generated Jeykll via FTP to my favorite hoster
 but it took me several hours to get this working...
 
-Travis CI has [a not so nice example](https://docs.travis-ci.com/user/deployment/custom/#FTP) for a FTP 
+Travis CI has [a not so nice example](https://docs.travis-ci.com/user/deployment/custom/#FTP){:target="_blank"} for a FTP 
 deployment which basically uploads just one file. I needed something more sophisticated like `lftp` which 
-is able to upload a whole directory. I wrote this little script which uploads my `_site` directory to a remote host:
+is able to upload a whole directory. 
+
+So I wrote this little script:
 ```
 #!/usr/bin/env bash
 set -e
