@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-ping $FTP_HOST
-
 REMOTEPATH='/website/ch/fabwu'
 LOCALPATH='./_site/'
 
