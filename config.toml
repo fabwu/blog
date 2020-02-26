@@ -1,0 +1,38 @@
+baseURL = "https://fabwu.ch"
+languageCode = "en-us"
+title = "Fabian Wüthrich"
+theme = "pulp"
+canonifyurls = true
+hasCJKLanguage = true
+
+
+[params]
+    author = "Fabian Wüthrich"
+    avatar = "avatar.jpg"
+    favicon = "favicon.ico"
+    description = """
+        MSc Student Computer Science at ETH Zürich
+    """
+    publicationYear = "2020"
+
+[outputs]
+    section = ["JSON", "HTML"]
+    taxonomy = ["JSON", "HTML"]
+
+[[menu.main]]
+    identifier = "github"
+    pre = "<i class='fab fa-github fa-lg'></i>"
+    url = "https://github.com/fabwu"
+    weight = 30
+
+[[menu.main]]
+    identifier = "linkedin"
+    pre = "<i class='fab fa-linkedin fa-lg'></i>"
+    url = "https://www.linkedin.com/in/fabian-wüthrich-b9aa5b108"
+    weight = 30
+
+[[menu.main]]
+    identifier = "email"
+    pre = "<i class='fa fa-envelope fa-lg'></i>"
+    url = "mailto:me@fabwu.ch"
+    weight = 40
