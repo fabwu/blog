@@ -1,0 +1,25 @@
+image: ruby:2.3
+
+cache:
+  paths: 
+    - vendor/
+
+before_script:
+  - export LC_ALL="C.UTF-8"
+  - export LANG="en_US.UTF-8"
+  - export LANGUAGE="en_US.UTF-8"
+  - apt-get update -qq && apt-get install -y -qq lftp
+  - bundle install --path vendor
+  - chmod +x ./scripts/cibuild
+  - chmod +x ./scripts/deploy
+
+pages:
+  stage: deploy
+  script:
+    - ./scripts/cibuild
+    - ./scripts/deploy
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+LOCALPATH='./public'
+REMOTEPATH='/'
+
+lftp -f "
+set dns:order "inet"
+open ftp://$FTP_HOST
+user $FTP_USER $FTP_PASSWORD
+mirror --continue --reverse --delete $LOCALPATH $REMOTEPATH
+bye
+" 
