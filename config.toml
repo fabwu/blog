@@ -11,7 +11,7 @@ hasCJKLanguage = true
     avatar = "avatar.jpg"
     favicon = "favicon.ico"
     description = """
-        Traveling in Central America
+        Seeking a position in renewable energy to apply my expertise in software development and engineering.
     """
     publicationYear = "2024"
 
@@ -21,8 +21,14 @@ hasCJKLanguage = true
 
 [[menu.main]]
     identifier = "github"
-    pre = "<i class='fab fa-github fa-lg'></i>"
+    pre = "<i class='fa fa-github fa-lg'></i>"
     url = "https://github.com/fabwu"
+    weight = 30
+
+[[menu.main]]
+    identifier = "linkedin"
+    pre = "<i class='fa fa-linkedin fa-lg'></i>"
+    url = "https://www.linkedin.com/in/fabian-w%C3%BCthrich/"
     weight = 30
 
 [[menu.main]]
