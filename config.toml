@@ -13,7 +13,7 @@ hasCJKLanguage = true
     description = """
         Fachspezialist Smart Metering @ Primeo
     """
-    publicationYear = "2024"
+    publicationYear = "2025"
 
 [outputs]
     section = ["JSON", "HTML"]
